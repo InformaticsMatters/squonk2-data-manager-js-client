@@ -1,0 +1,31 @@
+{
+  "name": "@squonk/data-manager-client",
+  "description": "TypeScript client for the Squonk Data Manager API. Generated from the Open API spec with orval. Provides React Hooks to fetch data with react-query using Axios under-the-hood.",
+  "version": "0.3.0-alpha.1",
+  "author": "Oliver Dudgeon",
+  "license": "MIT",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "node setup.js && orval --config ./orval.config.cjs && tsup",
+    "watch": "tsup --watch",
+    "orval": "orval --config ./orval.config.cjs",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "js-yaml": "^4.1.0",
+    "orval": "^5.4.9",
+    "release-it": "^14.10.0",
+    "tslib": "^2.3.0",
+    "tsup": "^4.11.2"
+  },
+  "peerDependencies": {
+    "axios": "^0.21.1",
+    "react-query": "^3.17.2"
+  },
+  "release-it": {}
+}
