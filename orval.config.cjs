@@ -2,7 +2,7 @@ module.exports = {
   'data-manager-api': {
     input: {
       // validation: true,
-      target: 'https://squonk.informaticsmatters.org/data-manager-api/openapi.json',
+      target: './openapi.yaml',
       override: {
         transformer: './input-transformer.cjs',
       },
