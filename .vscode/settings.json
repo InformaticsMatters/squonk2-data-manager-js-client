@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "tsup",
     "orval",
+    "actions",
     "actions"
   ],
   "cSpell.words": [
