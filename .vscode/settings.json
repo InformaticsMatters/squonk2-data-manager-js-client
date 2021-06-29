@@ -3,5 +3,9 @@
     "tsup",
     "orval",
     "actions"
+  ],
+  "cSpell.words": [
+    "orval",
+    "tsup"
   ]
 }
