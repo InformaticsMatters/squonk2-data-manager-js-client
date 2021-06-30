@@ -1,7 +1,8 @@
 ---
 name: build
 
-# Actions that take place on the main branch.
+# Actions that take place on the main branch,
+# pull-requests to the main branch and external dm-api events.
 
 # -----------------
 # Control variables (GitHub Secrets)
@@ -20,6 +21,9 @@ on:
     types:
       dm-api
   push:
+    branches:
+    - 'master'
+  pull_request:
     branches:
     - 'master'
 
