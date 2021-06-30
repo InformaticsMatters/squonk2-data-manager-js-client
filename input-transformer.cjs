@@ -8,10 +8,12 @@ const translations = {
   'app.api_dataset.get_dataset': 'downloadDataset',
   'app.api_dataset.delete_editor': 'removeEditorFromDataset',
   'app.api_dataset.put_editor': 'addEditorToDataset',
+  'app.api_dataset.get_versions': 'getVersions',
   'app.api_file.post': 'attachFile',
   'app.api_file.delete': 'deleteFile',
   'app.api_file.get': 'getFiles',
   'app.api_file.get_file': 'downloadFile',
+  'app.api_dataset.get_digest': 'getDatasetDigest',
   'app.api_instance.get': 'getInstances',
   'app.api_instance.post': 'createInstance',
   'app.api_instance.delete': 'terminateInstance',
@@ -27,9 +29,11 @@ const translations = {
   'app.api_task.get': 'getTasks',
   'app.api_task.get_task': 'getTask',
   'app.api_type.get': 'getFileTypes',
+  'app.api_user.get': 'getUsers',
 };
 
 module.exports = (obj) => {
+  console.log('Starting Input Transformer');
   // Make all types required so that the models are not all optional `field?: type`
   // This assumes every *should* be required which they may not
   // Note that the conexion seems to be removing required fields from the public API.
@@ -37,8 +41,12 @@ module.exports = (obj) => {
   const schemas = obj.components.schemas;
 
   for (const schema of Object.values(schemas)) {
-    schema.required = Object.keys(schema.properties);
+    if (schema.properties !== undefined) {
+      schema.required = Object.keys(schema.properties);
+    }
   }
+
+  console.log('Added `required` fields to each schema');
 
   // Transform the operation Ids from python/Flask routes to semantically named functions in userland
   // TODO: Replace the hard-coded values by putting these names as an extension field in the Open API spec
@@ -63,6 +71,8 @@ module.exports = (obj) => {
     console.log('Extra Translations:');
     console.log(extraTranslations);
   }
+  console.log('Finished Input Transformer');
+
   return obj;
 };
 
