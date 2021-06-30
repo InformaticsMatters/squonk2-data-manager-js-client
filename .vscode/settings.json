@@ -4,10 +4,15 @@
     "orval",
     "actions",
     "actions",
-    "entrypoints"
+    "entrypoints",
+    "dependencies"
   ],
   "cSpell.words": [
     "orval",
     "tsup"
-  ]
+  ],
+  "yaml.format.singleQuote": true,
+  "[yaml]": {
+    "editor.formatOnSave": false,
+  },
 }
