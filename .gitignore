@@ -17,4 +17,3 @@ type
 src/model
 src/*.ts
 !custom-instance.ts
-!index.ts

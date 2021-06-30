@@ -1,0 +1,17 @@
+!dist
+.eslintrc.json
+input-transformer.cjs
+openapi.yaml
+openapi.json
+
+*.log
+.DS_Store
+openapi.yaml
+openapi.json
+
+custom-instance.ts
+orval.config.cjs
+setup.js
+tsup.config.ts
+.github
+.vscode
