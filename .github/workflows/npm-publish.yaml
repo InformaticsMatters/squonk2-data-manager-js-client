@@ -34,7 +34,6 @@ jobs:
     - name: Build and test
       run: |
         npm ci
-        npm test
 
   publish-npm:
     needs: build
