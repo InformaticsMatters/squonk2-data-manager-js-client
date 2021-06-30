@@ -21,7 +21,7 @@ on:
       dm-api
   push:
     branches:
-    - 'main'
+    - 'master'
 
 jobs:
   build:
