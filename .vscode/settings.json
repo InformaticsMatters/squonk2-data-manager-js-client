@@ -3,7 +3,8 @@
     "tsup",
     "orval",
     "actions",
-    "actions"
+    "actions",
+    "entrypoints"
   ],
   "cSpell.words": [
     "orval",

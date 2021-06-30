@@ -8,9 +8,13 @@ try {
   const tags = [...new Set(Object.keys(doc.paths).map((path) => path.split('/')[1]))];
 
   tags.forEach((tag) => {
-    fs.rmSync(tag, { recursive: true }, (err) => {
-      throw err;
-    });
+    try {
+      fs.rmSync(tag, { recursive: true }, (err) => {
+        throw err;
+      });
+    } catch {
+      // Do nothing
+    }
     fs.mkdirSync(tag, (err) => {
       // console.error(`${tag} already exists`);
       throw err;
@@ -18,8 +22,8 @@ try {
     fs.writeFileSync(
       `${tag}/package.json`,
       `{
-      "main": "../dist/${tag}.js",
-      "module": "../dist/${tag}.mjs",
+      "main": "../dist/${tag}.cjs",
+      "module": "../dist/${tag}.js",
       "types": "../dist/${tag}.d.ts",
       "sideEffects": false
     }`,
