@@ -1,0 +1,25 @@
+---
+name: build
+
+on:
+  repository_dispatch:
+    types:
+      dm-api
+  push:
+    branches:
+    - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.4.0
+    - name: Build and test
+      run: |
+        npm ci
+        npm test
