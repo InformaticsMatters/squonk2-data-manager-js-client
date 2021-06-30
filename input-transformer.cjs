@@ -1,7 +1,7 @@
 const translations = {
   'app.api_application.get': 'getApplications',
   'app.api_application.get_application': 'getApplication',
-  'app.api_dataset.get': 'getAvailableDatasets',
+  'app.api_dataset.get': 'getDatasets',
   'app.api_dataset.put': 'createDatasetFromFile',
   'app.api_dataset.post': 'uploadDataset',
   'app.api_dataset.delete': 'deleteDataset',
