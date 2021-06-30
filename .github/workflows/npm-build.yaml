@@ -1,6 +1,20 @@
 ---
 name: build
 
+# Actions that take place on the main branch.
+
+# -----------------
+# Control variables (GitHub Secrets)
+# -----------------
+#
+# (n/a)
+#
+# -----------
+# Environment (GitHub Environments)
+# -----------
+#
+# Environment         (n/a)
+
 on:
   repository_dispatch:
     types:
