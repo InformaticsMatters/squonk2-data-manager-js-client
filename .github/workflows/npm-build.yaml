@@ -39,4 +39,6 @@ jobs:
         node-version: 16.4.0
     - name: Build and test
       run: |
+        echo ci_pipeline_id=${{ github.event.client_payload.ci_pipeline_id }}
+        echo ci_commit_tag=${{ github.event.client_payload.ci_commit_tag }}
         npm ci
