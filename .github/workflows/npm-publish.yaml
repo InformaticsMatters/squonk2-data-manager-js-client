@@ -1,7 +1,7 @@
 ---
 
-# Publishes the application (on a release event).
-# See: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+# Actions that take place on the main branch,
+# driven by external dm-api events.
 
 # -----------------
 # Control variables (GitHub Secrets)
@@ -18,8 +18,9 @@
 name: publish
 
 on:
-  release:
-    types: [created]
+  repository_dispatch:
+    types:
+      dm-api
 
 env:
   NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

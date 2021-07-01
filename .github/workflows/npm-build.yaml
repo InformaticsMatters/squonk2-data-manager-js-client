@@ -2,7 +2,7 @@
 name: build
 
 # Actions that take place on the main branch,
-# pull-requests to the main branch and external dm-api events.
+# pull-requests to the main branch.
 
 # -----------------
 # Control variables (GitHub Secrets)
@@ -17,9 +17,6 @@ name: build
 # Environment         (n/a)
 
 on:
-  repository_dispatch:
-    types:
-      dm-api
   push:
     branches:
     - 'master'
@@ -39,11 +36,4 @@ jobs:
         node-version: 16.4.0
     - name: Build and test
       run: |
-        echo CI_PIPELINE_ID=${CI_PIPELINE_ID}
-        echo CI_COMMIT_TAG=${CI_COMMIT_TAG}
-        sed -i s/'"0.0.0"'/'"'${CI_COMMIT_TAG:-0.0.0}'"'/ package.json
-        head package.json
         npm ci
-      env:
-        CI_PIPELINE_ID: ${{ github.event.client_payload.CI_PIPELINE_ID }}
-        CI_COMMIT_TAG: ${{ github.event.client_payload.CI_COMMIT_TAG }}
