@@ -29,7 +29,7 @@ env:
   GITLAB_API: https://gitlab.com/api/v4/projects
   GITLAB_API_TOKEN: ${{ secrets.DATA_MANAGER_TOKEN }}
   GITLAB_PROJECT: 20449765
-  OPENAPI_FILE: openapi-0.1.yaml
+  OPENAPI_FILE: openapi.yaml
   OPENAPI_PATH: app%2Fopenapi
 
 jobs:
@@ -44,8 +44,9 @@ jobs:
         node-version: 16.4.0
     - name: Build and test
       run: |
-        curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}%2F${OPENAPI_FILE}/raw?tag=${CI_COMMIT_TAG} --output ${OPENAPI_FILE}
+        curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}%2F${OPENAPI_FILE}/raw?ref=${CI_COMMIT_TAG} --output ${OPENAPI_FILE}
         tail ${OPENAPI_FILE}
+        cat ${OPENAPI_FILE} | wc -l
         sed -i s/'"0.0.0"'/'"'${CI_COMMIT_TAG}'"'/ package.json
         head package.json
         npm ci
@@ -63,8 +64,9 @@ jobs:
         registry-url: https://registry.npmjs.org/
     - name: Publish
       run: |
-        curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}%2F${OPENAPI_FILE}/raw?tag=${CI_COMMIT_TAG} --output ${OPENAPI_FILE}
+        curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}%2F${OPENAPI_FILE}/raw?ref=${CI_COMMIT_TAG} --output ${OPENAPI_FILE}
         tail ${OPENAPI_FILE}
+        cat ${OPENAPI_FILE} | wc -l
         sed -i s/'"0.0.0"'/'"'${CI_COMMIT_TAG}'"'/ package.json
         head package.json
         npm ci
