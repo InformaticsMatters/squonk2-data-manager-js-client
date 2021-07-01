@@ -49,3 +49,4 @@ jobs:
         curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}%2F${OPENAPI_FILE}/raw?branch=${GITLAB_BRANCH} --output ${OPENAPI_FILE}
         tail ${OPENAPI_FILE}
         npm ci
+        npm run build
