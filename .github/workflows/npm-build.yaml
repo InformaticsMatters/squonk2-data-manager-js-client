@@ -29,7 +29,7 @@ env:
   GITLAB_API_TOKEN: ${{ secrets.DATA_MANAGER_TOKEN }}
   GITLAB_PROJECT: 20449765
   GITLAB_BRANCH: 0.4
-  OPENAPI_FILE: openapi-0.1.yaml
+  OPENAPI_FILE: openapi.yaml
   OPENAPI_PATH: app%2Fopenapi
 
 jobs:
@@ -46,7 +46,8 @@ jobs:
     # from whatever is currently on the 0.4 branch of the data manager
     - name: Build and test
       run: |
-        curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}%2F${OPENAPI_FILE}/raw?branch=${GITLAB_BRANCH} --output ${OPENAPI_FILE}
+        curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}%2F${OPENAPI_FILE}/raw?ref=${GITLAB_BRANCH} --output ${OPENAPI_FILE}
         tail ${OPENAPI_FILE}
+        cat ${OPENAPI_FILE} | wc -l
         npm ci
         npm run build
