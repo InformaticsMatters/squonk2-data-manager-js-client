@@ -28,8 +28,9 @@ env:
   GITLAB_API: https://gitlab.com/api/v4/projects
   GITLAB_API_TOKEN: ${{ secrets.DATA_MANAGER_TOKEN }}
   GITLAB_PROJECT: 20449765
+  GITLAB_BRANCH: 0.4
   OPENAPI_FILE: openapi-0.1.yaml
-  OPENAPI_PATH: app/openapi
+  OPENAPI_PATH: app%2Fopenapi
 
 jobs:
   build:
@@ -41,8 +42,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 16.4.0
+    # We pull the OpenAPI file
+    # from whatever is currently on the 0.4 branch of the data manager
     - name: Build and test
       run: |
-        curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}/${OPENAPI_FILE} --output ${OPENAPI_FILE}
+        curl -H "Private-Token: ${GITLAB_API_TOKEN}" ${GITLAB_API}/${GITLAB_PROJECT}/repository/files/${OPENAPI_PATH}%2F${OPENAPI_FILE}/raw?branch=${GITLAB_BRANCH} --output ${OPENAPI_FILE}
         tail ${OPENAPI_FILE}
         npm ci
