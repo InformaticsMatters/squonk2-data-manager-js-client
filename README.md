@@ -1,5 +1,7 @@
 # Client generator for the Squonk Data Manager API
 
+[![npm version](https://badge.fury.io/js/%40squonk%2Fdata-manager-client.svg)](https://badge.fury.io/js/%40squonk%2Fdata-manager-client)
+
 This repo is a NodeJS package that generates a typescript client from an open api specification.
 
 - Consumes the Squonk Data Manager API
