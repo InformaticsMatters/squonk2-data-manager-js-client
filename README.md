@@ -18,7 +18,7 @@ Developed on `Node 16` and `npm 7`
 1. Install dependencies with `npm i`
 2. Copy a version of the data-manager-api open-api YAML file in to the repo root
 3. Generate the client with `npm run build`
-4. This can then be deployed with `npm run release`
+4. This can then be deployed with `npm publish`
 
 
 ## Commands
@@ -26,4 +26,24 @@ Developed on `Node 16` and `npm 7`
 - `npm run orval` will generate the client with Orval
 - `npm run build` will generate the client and then bundle it and create a version that can be deployed to npm
 - `npm run watch` will watch for changes in the repo and rebundle when changes re detected. It does not regenerate the client automatically.
-- `npm run release` will run `release-it` to deploy a package to npm
+
+## Output
+
+The contents published packages depend on the version of the `openapi.yaml` used to generate it. In general though, the package is organised as follows:
+
+All types can be imported from the main entry point:
+```ts
+import type { Task, JobDetail, ... } from '@squonk/data-manager-client';
+```
+
+The custom instance (what is used to make all Axios calls) can also be imported from here:
+
+```ts
+import { customInstance } from '@squonk/data-manager-client';
+```
+
+Each `tag` from the `openapi.yaml` is used to create a sub-entry point. For example, the functions to make requests and the `react-query` hooks for a `dataset` tag can be imported as follows:
+
+```ts
+import { useGetDatasets, useCreateDataset, createDataset, ... } from '@squonk/data-manager-client/dataset';
+```
