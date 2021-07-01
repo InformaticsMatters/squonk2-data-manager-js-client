@@ -1,12 +1,12 @@
 {
+  "version": "0.0.0",
+  "author": "Oliver Dudgeon",
   "name": "@squonk/data-manager-client",
   "repository": {
     "type": "git",
     "url": "https://github.com/InformaticsMatters/data-manager-npm-client"
   },
   "description": "TypeScript client for the Squonk Data Manager API. Generated from the Open API spec with orval. Provides React Hooks to fetch data with react-query using Axios under-the-hood.",
-  "version": "0.0.0",
-  "author": "Oliver Dudgeon",
   "license": "MIT",
   "type": "module",
   "module": "./dist/index.js",
