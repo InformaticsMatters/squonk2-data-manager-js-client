@@ -32,7 +32,7 @@ export const customInstance = <TReturn>(config: AxiosRequestConfig): Promise<TRe
   // Rewrite 'data' of all POST requests to multipart form-data
   // ? Could this be problematic if data needs to be used for both the body and forming the path?
   const method = config.method?.toLowerCase();
-  if (method === 'post' || method === 'put') {
+  if (method === 'post' || method === 'put' || method === 'patch') {
     const formData = new FormData();
     for (const key of Object.keys(config.data ?? {})) {
       formData.append(key, config.data[key]);
