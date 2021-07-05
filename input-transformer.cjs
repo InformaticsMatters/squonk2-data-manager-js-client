@@ -34,19 +34,6 @@ const translations = {
 
 module.exports = (obj) => {
   console.log('Starting Input Transformer');
-  // Make all types required so that the models are not all optional `field?: type`
-  // This assumes every *should* be required which they may not
-  // Note that the conexion seems to be removing required fields from the public API.
-  // We need to move this to source the source open-api yaml.
-  const schemas = obj.components.schemas;
-
-  for (const schema of Object.values(schemas)) {
-    if (schema.properties !== undefined) {
-      schema.required = Object.keys(schema.properties);
-    }
-  }
-
-  console.log('Added `required` fields to each schema');
 
   // Transform the operation Ids from python/Flask routes to semantically named functions in userland
   // TODO: Replace the hard-coded values by putting these names as an extension field in the Open API spec
