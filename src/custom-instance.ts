@@ -29,18 +29,6 @@ export const setBaseUrl = (baseUrl: string) => {
 export const customInstance = <TReturn>(config: AxiosRequestConfig): Promise<TReturn> => {
   const source = Axios.CancelToken.source();
 
-  // Rewrite 'data' of all POST requests to multipart form-data
-  // ? Could this be problematic if data needs to be used for both the body and forming the path?
-  const method = config.method?.toLowerCase();
-  if (method === 'post' || method === 'put' || method === 'patch') {
-    const formData = new FormData();
-    for (const key of Object.keys(config.data ?? {})) {
-      formData.append(key, config.data[key]);
-    }
-
-    config.data = formData;
-  }
-
   const promise = AXIOS_INSTANCE({ ...config, cancelToken: source.token }).then(({ data }) => data);
 
   // Promise doesn't have a cancel method but react-query requires this method to make cancellations general.
