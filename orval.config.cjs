@@ -8,7 +8,7 @@ module.exports = {
       },
     },
     output: {
-      mode: 'tags',
+      mode: 'tags-split',
       target: './src/data-manager-api.ts',
       // schemas: './src/model',
       // mock: true,

@@ -7,5 +7,5 @@ export const tsup: Options = {
   sourcemap: true,
   clean: true,
   format: ['esm'],
-  entryPoints: ['src/index.ts', 'src/*.ts'],
+  entryPoints: ['src/index.ts', 'src/*/*.ts'],
 };

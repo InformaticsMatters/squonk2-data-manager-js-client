@@ -6,16 +6,6 @@ dist
 openapi.yaml
 openapi.json
 
-application
-dataset
-file
-instance
-job
-project
-task
-type
-user
-
 src/model
-src/*.ts
-!custom-instance.ts
+src/*/*.ts
+src/data-manager-api.schemas.ts

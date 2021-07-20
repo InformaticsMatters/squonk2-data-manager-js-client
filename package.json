@@ -1,5 +1,5 @@
 {
-  "version": "0.5.3-dev.2",
+  "version": "0.0.0",
   "author": "Oliver Dudgeon",
   "name": "@squonk/data-manager-client",
   "repository": {
@@ -9,12 +9,11 @@
   "description": "TypeScript client for the Squonk Data Manager API. Generated from the Open API spec with orval. Provides React Hooks to fetch data with react-query using Axios under-the-hood.",
   "license": "MIT",
   "type": "module",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "module": "./index.js",
+  "types": "./index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "node setup.js && orval --config ./orval.config.cjs && tsup",
-    "watch": "tsup --watch",
+    "build": "orval --config ./orval.config.cjs && tsup && node setup-entrypoints.js",
     "orval": "orval --config ./orval.config.cjs"
   },
   "devDependencies": {

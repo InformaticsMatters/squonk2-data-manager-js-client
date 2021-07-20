@@ -75,6 +75,8 @@ jobs:
         head package.json
         npm ci
         npm run build
+        cp package.json dist/package.json
+        cd dist
         npm publish
 
   # publish-gpr:
