@@ -12,7 +12,7 @@ try {
       `./dist/${tag}/package.json`,
       `{
   "module": "./${tag}.js",
-  "types": "./${tag}.d.ts",
+  "types": "../${tag}.d.ts",
   "sideEffects": false
 }`,
       (err) => {
