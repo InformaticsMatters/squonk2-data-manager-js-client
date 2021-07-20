@@ -26,10 +26,15 @@ export const setBaseUrl = (baseUrl: string) => {
   AXIOS_INSTANCE.defaults.baseURL = baseUrl;
 };
 
-export const customInstance = <TReturn>(config: AxiosRequestConfig): Promise<TReturn> => {
+export const customInstance = <TReturn>(
+  config: AxiosRequestConfig,
+  options: AxiosRequestConfig,
+): Promise<TReturn> => {
   const source = Axios.CancelToken.source();
 
-  const promise = AXIOS_INSTANCE({ ...config, cancelToken: source.token }).then(({ data }) => data);
+  const promise = AXIOS_INSTANCE({ ...config, ...options, cancelToken: source.token }).then(
+    ({ data }) => data,
+  );
 
   // Promise doesn't have a cancel method but react-query requires this method to make cancellations general.
   // This can either be a any assertion or a @ts-ignore comment.
