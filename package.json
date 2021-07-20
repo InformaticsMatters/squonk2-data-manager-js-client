@@ -10,7 +10,6 @@
   "license": "MIT",
   "type": "module",
   "module": "./dist/index.js",
-  "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
