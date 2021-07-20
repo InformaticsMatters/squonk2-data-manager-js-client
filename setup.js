@@ -22,7 +22,6 @@ try {
     fs.writeFileSync(
       `${tag}/package.json`,
       `{
-  "main": "../dist/${tag}.cjs",
   "module": "../dist/${tag}.js",
   "types": "../dist/${tag}.d.ts",
   "sideEffects": false
