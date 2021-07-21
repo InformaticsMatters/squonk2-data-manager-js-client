@@ -6,6 +6,6 @@ export const tsup: Options = {
   splitting: true,
   sourcemap: true,
   clean: true,
-  format: ['esm'],
+  format: ['esm', 'cjs'],
   entryPoints: ['src/index.ts', 'src/*/*.ts'],
 };

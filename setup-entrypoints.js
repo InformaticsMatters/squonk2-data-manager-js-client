@@ -12,6 +12,7 @@ try {
       `./dist/${tag}/package.json`,
       `{
   "module": "./${tag}.js",
+  "main": "./${tag}.cjs",
   "types": "../${tag}.d.ts",
   "sideEffects": false
 }`,
