@@ -6,8 +6,6 @@ openapi.json
 
 *.log
 .DS_Store
-openapi.yaml
-openapi.json
 
 custom-instance.ts
 orval.config.cjs
