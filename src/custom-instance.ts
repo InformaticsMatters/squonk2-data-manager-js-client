@@ -1,7 +1,11 @@
 /** Based off the example custom-instance from Orval docs
  * https://github.com/anymaniax/orval/blob/master/samples/react-app-with-react-query/src/api/mutator/custom-instance.ts
- * TODO: Considering using Fetch-API instead of axios. This instance will have to change. See https://react-query.tanstack.com/guides/query-cancellation
- *       Could be achieved without changing much using `redaxios`
+ *
+ * See https://react-query.tanstack.com/guides/query-cancellation
+ *
+ * TODO: Considering using Fetch-API instead of axios. This instance will have to change. Could be
+ * achieved without changing much using `redaxios`
+ * Or use 'ky'
  */
 
 import Axios, { AxiosRequestConfig } from 'axios';
@@ -28,7 +32,7 @@ export const setBaseUrl = (baseUrl: string) => {
 
 export const customInstance = <TReturn>(
   config: AxiosRequestConfig,
-  options: AxiosRequestConfig,
+  options?: AxiosRequestConfig,
 ): Promise<TReturn> => {
   const source = Axios.CancelToken.source();
 
