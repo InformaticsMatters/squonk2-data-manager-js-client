@@ -10,8 +10,8 @@ module.exports = {
     output: {
       mode: 'tags-split',
       target: './src/data-manager-api.ts',
-      // schemas: './src/model',
       // mock: true,
+      prettier: true,
       client: 'react-query',
       override: {
         mutator: {
