@@ -79,6 +79,7 @@ jobs:
         cp README.md dist/README.md
         cp LICENSE dist/LICENSE
         cd dist
+        head package.json
         npm publish
 
   # publish-gpr:
