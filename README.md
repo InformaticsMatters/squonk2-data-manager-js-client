@@ -12,23 +12,6 @@ This repo is a NodeJS package that generates a typescript client from an open ap
 - React-Query hooks for use in React applications
 - Built with [tsup](https://tsup.egoist.sh/)
 
-## Build
-
-Developed on `Node 16` and `npm 7`
-
-
-1. Install dependencies with `npm i`
-2. Copy a version of the data-manager-api open-api YAML file in to the repo root
-3. Generate the client with `npm run build`
-4. This can then be deployed with `npm publish`
-
-
-## Commands
-
-- `npm run orval` will generate the client with Orval
-- `npm run build` will generate the client and then bundle it and create a version that can be deployed to npm
-- `npm run watch` will watch for changes in the repo and rebundle when changes re detected. It does not regenerate the client automatically.
-
 ## Output
 
 The contents published packages depend on the version of the `openapi.yaml` used to generate it. In general though, the package is organised as follows:
