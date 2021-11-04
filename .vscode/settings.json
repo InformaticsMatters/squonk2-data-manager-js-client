@@ -1,22 +1,9 @@
 {
   "conventionalCommits.scopes": [
-    "tsup",
-    "orval",
-    "actions",
-    "actions",
-    "entrypoints",
-    "dependencies",
-    "readme",
-    "custom-instance",
-    "editor"
+    "config",
+    "Readme"
   ],
-  "cSpell.words": [
-    "orval",
-    "tsup"
-  ],
-  "yaml.format.singleQuote": true,
   "[yaml]": {
     "editor.formatOnSave": false,
   },
-  "iridium.npm.packageManager": "npm"
 }
