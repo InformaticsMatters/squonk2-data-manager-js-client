@@ -28,7 +28,7 @@
 <p>For <strong>Dataset</strong> tasks, where the task <code>purpose</code> is <code>DATASET</code>, you must wait until <code>done</code> is <strong>true</strong>. The dataset is available when the task object&#39;s <code>done</code> field is <strong>true</strong> and the <code>exit_code</code> field is zero (<strong>0</strong>). If you discover the task is <code>done</code> but you have a non-zero <code>exit_code</code>, the dataset upload will have failed, and you may need need to inspect the final <code>state</code> and any related <code>events</code> to understand why.</p>
 <p>For Application <strong>Instance</strong> tasks, where the task <code>purpose</code> is <code>INSTANCE</code>, you must wait until you find the <code>STARTED</code> state in the <code>states</code> list. An Application Instance is only <code>done</code> when the Application Instance has been deleted.</p>
 
-<h3>Summary</h3><p>Returns task information</p>
+<h3>Summary</h3><p>Returns Task information</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
