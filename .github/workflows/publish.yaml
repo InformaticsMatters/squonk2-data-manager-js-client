@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build
-        uses: InformaticsMatters/openapi-js-client-generator/build-client@main
+        uses: InformaticsMatters/squonk2-openapi-js-client-generator/build-client@main
         env:
           CI_PIPELINE_ID: ${{ github.event.client_payload.CI_PIPELINE_ID }}
           CI_COMMIT_TAG: ${{ github.event.client_payload.CI_COMMIT_TAG }}
@@ -24,12 +24,12 @@ jobs:
           API_NAME: data-manager-api
           API_TARGET_NAME: data-manager-api
       - name: Publish
-        uses: InformaticsMatters/openapi-js-client-generator/publish-client@main
+        uses: InformaticsMatters/squonk2-openapi-js-client-generator/publish-client@main
         env:
           CI_COMMIT_TAG: ${{ github.event.client_payload.CI_COMMIT_TAG }}
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Docs
-        uses: InformaticsMatters/openapi-js-client-generator/publish-docs@main
+        uses: InformaticsMatters/squonk2-openapi-js-client-generator/publish-docs@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
