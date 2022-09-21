@@ -17,7 +17,7 @@ jobs:
           CI_COMMIT_TAG: ${{ github.event.client_payload.CI_COMMIT_TAG }}
           GITLAB_API: https://gitlab.com/api/v4/projects
           GITLAB_API_TOKEN: ${{ secrets.DATA_MANAGER_TOKEN }}
-          GITLAB_PROJECT: 20449765
+          GITLAB_PROJECT: 39606721
           OPENAPI_FILE: openapi.yaml
           OPENAPI_PATH: app%2Fopenapi
         with:
