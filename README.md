@@ -9,7 +9,7 @@ This repo is a NodeJS package that generates a typescript client from an open ap
 - Typescript
 - Calls made by Axios (this might change)
 - Functions to call each API path
-- React-Query hooks for use in React applications
+- React-Query v4 hooks for use in React applications
 
 ## Output
 
