@@ -33,6 +33,7 @@
 <a href="index.ProjectDetail.html#editors" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>editors</span></a>
 <a href="index.ProjectDetail.html#files" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>files?</span></a>
 <a href="index.ProjectDetail.html#name" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>name</span></a>
+<a href="index.ProjectDetail.html#observers" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>observers</span></a>
 <a href="index.ProjectDetail.html#owner" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>owner</span></a>
 <a href="index.ProjectDetail.html#private" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>private</span></a>
 <a href="index.ProjectDetail.html#product_id" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>product_<wbr/>id?</span></a>
@@ -60,7 +61,7 @@
 <div class="tsd-comment tsd-typography"><p>A list of managed files in the Project</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:780</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:782</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -68,6 +69,13 @@
 </div><aside class="tsd-sources">
 <ul>
 <li>Defined in src/data-manager-api.schemas.ts:757</li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="observers" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>observers</span><a href="#observers" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">observers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+<div class="tsd-comment tsd-typography"><p>An observer (user_id) of the project</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in src/data-manager-api.schemas.ts:777</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="owner" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>owner</span><a href="#owner" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">owner<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -102,7 +110,7 @@
 <div class="tsd-comment tsd-typography"><p>The approximate size of all the files in the Project volume. This is updated regularly throughout the day and its current size may differ from what is reported here. The smallest billable unit is 1GiB (1,073,741,824 bytes). Therefore a project that contains 32KiB of files is recorded as 1GiB in size</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:777</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:779</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="unit_id" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>unit_<wbr/>id</span><a href="#unit_id" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">unit_<wbr/>id<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -153,6 +161,7 @@
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="index.ProjectDetail.html#editors" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>editors</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="index.ProjectDetail.html#files" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>files?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="index.ProjectDetail.html#name" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>name</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="index.ProjectDetail.html#observers" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>observers</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="index.ProjectDetail.html#owner" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>owner</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="index.ProjectDetail.html#private" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>private</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="index.ProjectDetail.html#product_id" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>product_<wbr/>id?</a></li>
