@@ -21,7 +21,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">TaskGetResponse</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1586</li></ul></aside>
+<li>Defined in src/data-manager-api.schemas.ts:1604</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -49,77 +49,77 @@
 <div class="tsd-comment tsd-typography"><p>The date and time the task was created</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1604</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1622</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="done" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>done</span><a href="#done" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">done</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>True if the task has run to completion. If the task finished successfully the <code>exit_code</code> will be zero.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1607</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1625</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="events" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>events</span><a href="#events" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">events</span><span class="tsd-signature-symbol">?:</span> <a href="index.TaskEvent.html" class="tsd-signature-type tsd-kind-interface">TaskEvent</a><span class="tsd-signature-symbol">[]</span></div>
 <div class="tsd-comment tsd-typography"><p>A (possibly empty) list of application events. The oldest event occupies the first position in the list.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1619</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1637</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="exit_code" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>exit_<wbr/>code</span><a href="#exit_code" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">exit_<wbr/>code</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>Present when <code>done</code> and zero if the task finished successfully.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1613</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1631</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="image" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>image</span><a href="#image" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">image</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>If a container image is launched by the task the image name is available here</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1601</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1619</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="instance_specification" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>instance_<wbr/>specification</span><a href="#instance_specification" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">instance_<wbr/>specification</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Is the Task Purpose is <code>INSTANCE</code>, and the instance was given a <code>specification</code> the specification can be found here. For <strong>Applications</strong> the specification is returned verbatim.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1598</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1616</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="purpose" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>purpose</span><a href="#purpose" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">purpose</span><span class="tsd-signature-symbol">:</span> <a href="../variables/index.TaskGetResponsePurpose-1.html" class="tsd-signature-type tsd-kind-variable">TaskGetResponsePurpose</a></div>
 <div class="tsd-comment tsd-typography"><p>The purpose of the task. Tasks are typically executed for the purpose of Dataset processing, attaching as Project Files or Application Instance execution. Other fields in this object are only valid if the purpose is known (i.e. is not <code>UNKNOWN</code>)</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1589</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1607</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="purpose_id" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>purpose_<wbr/>id</span><a href="#purpose_id" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">purpose_<wbr/>id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The identity of the purpose, where available. This will be the Dataset UUID if the purpose of the task is/was for Dataset processing.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1592</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1610</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="purpose_version" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>purpose_<wbr/>version</span><a href="#purpose_version" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">purpose_<wbr/>version</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The version number, relating to the object under control. For Datasets this will be the Dataset version.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1595</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1613</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="removal" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>removal</span><a href="#removal" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">removal</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>True if the Task relates to an object removal, i.e. a DELETE</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1610</li></ul></aside></section>
+<li>Defined in src/data-manager-api.schemas.ts:1628</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="states" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>states</span><a href="#states" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">states</span><span class="tsd-signature-symbol">?:</span> <a href="index.TaskState.html" class="tsd-signature-type tsd-kind-interface">TaskState</a><span class="tsd-signature-symbol">[]</span></div>
 <div class="tsd-comment tsd-typography"><p>A (possibly empty) list of application states, the oldest state occupies the first position in the list.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in src/data-manager-api.schemas.ts:1616</li></ul></aside></section></section></div>
+<li>Defined in src/data-manager-api.schemas.ts:1634</li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -500,6 +500,9 @@
 <li><a href="../types/index.JobManifestPutBodyBody.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Job<wbr/>Manifest<wbr/>Put<wbr/>Body<wbr/>Body</span></a></li>
 <li><a href="../types/index.JobReplacements.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Job<wbr/>Replacements</span></a></li>
 <li><a href="../types/index.JobSummaryImageType.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Job<wbr/>Summary<wbr/>Image<wbr/>Type</span></a></li>
+<li><a href="../types/index.JobVariablesInputs.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Job<wbr/>Variables<wbr/>Inputs</span></a></li>
+<li><a href="../types/index.JobVariablesOptions.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Job<wbr/>Variables<wbr/>Options</span></a></li>
+<li><a href="../types/index.JobVariablesOutputs.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Job<wbr/>Variables<wbr/>Outputs</span></a></li>
 <li><a href="../types/index.PatchInstanceParams.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Patch<wbr/>Instance<wbr/>Params</span></a></li>
 <li><a href="../types/index.ProjectDeleteResponse.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Project<wbr/>Delete<wbr/>Response</span></a></li>
 <li><a href="../types/index.ProjectFilePutBodyBody.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Project<wbr/>File<wbr/>Put<wbr/>Body<wbr/>Body</span></a></li>
