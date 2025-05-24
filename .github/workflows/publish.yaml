@@ -18,17 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Debug Commit Tags
-        run: |
-          echo "Raw event: ${{ toJSON(github.event) }}"
-          echo "Inputs: ${{ toJSON(github.event.inputs) }}"
-          echo "Client payload: ${{ toJSON(github.event.client_payload) }}"
-          echo "github.event.inputs.commit_tag: ${{ github.event.inputs.commit_tag }}"
-          echo "github.event.client_payload.CI_COMMIT_TAG: ${{ github.event.client_payload.CI_COMMIT_TAG }}"
       - name: Build
         uses: InformaticsMatters/squonk2-openapi-js-client-generator/build-client@main
         env:
-          CI_COMMIT_TAG: ${{ github.event.inputs.commit_tag || github.event.client_payload.CI_COMMIT_TAG }}
+          CI_COMMIT_TAG: ${{ github.event.inputs.CI_COMMIT_TAG || github.event.client_payload.CI_COMMIT_TAG }}
           GITLAB_API: https://gitlab.com/api/v4/projects
           GITLAB_API_TOKEN: ${{ secrets.DATA_MANAGER_TOKEN }}
           GITLAB_PROJECT: 39606721
@@ -40,8 +33,8 @@ jobs:
       - name: Publish
         uses: InformaticsMatters/squonk2-openapi-js-client-generator/publish-client@main
         env:
-          CI_PIPELINE_ID: ${{ github.event.inputs.pipeline_id || github.event.client_payload.CI_PIPELINE_ID }}
-          CI_COMMIT_TAG: ${{ github.event.inputs.commit_tag || github.event.client_payload.CI_COMMIT_TAG }}
+          CI_PIPELINE_ID: ${{ github.event.inputs.CI_PIPELINE_ID || github.event.client_payload.CI_PIPELINE_ID }}
+          CI_COMMIT_TAG: ${{ github.event.inputs.CI_COMMIT_TAG || github.event.client_payload.CI_COMMIT_TAG }}
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Docs
