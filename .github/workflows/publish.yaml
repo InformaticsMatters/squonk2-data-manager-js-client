@@ -18,6 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug Commit Tags
+        run: |
+          echo "github.event.inputs.commit_tag: ${{ github.event.inputs.commit_tag }}"
+          echo "github.event.client_payload.CI_COMMIT_TAG: ${{ github.event.client_payload.CI_COMMIT_TAG }}"
       - name: Build
         uses: InformaticsMatters/squonk2-openapi-js-client-generator/build-client@main
         env:
