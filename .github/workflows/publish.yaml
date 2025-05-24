@@ -33,7 +33,7 @@ jobs:
       - name: Publish
         uses: InformaticsMatters/squonk2-openapi-js-client-generator/publish-client@main
         env:
-         CI_PIPELINE_ID: ${{ github.event.inputs.pipeline_id || github.event.client_payload.CI_PIPELINE_ID }}
+          CI_PIPELINE_ID: ${{ github.event.inputs.pipeline_id || github.event.client_payload.CI_PIPELINE_ID }}
           CI_COMMIT_TAG: ${{ github.event.inputs.commit_tag || github.event.client_payload.CI_COMMIT_TAG }}
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
