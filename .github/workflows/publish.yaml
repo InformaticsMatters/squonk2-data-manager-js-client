@@ -2,15 +2,16 @@ name: publish
 
 on:
   repository_dispatch:
-    types: dm-api
+    types:
+    - "dm-api"
   workflow_dispatch:
     inputs:
       CI_PIPELINE_ID:
-        description: 'GitLab Pipeline ID'
+        description: "GitLab Pipeline ID"
         type: string
         required: true
       CI_COMMIT_TAG:
-        description: 'Commit tag'
+        description: "Commit tag"
         type: string
         required: true
 
@@ -18,26 +19,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        uses: InformaticsMatters/squonk2-openapi-js-client-generator/build-client@main
-        env:
-          CI_COMMIT_TAG: ${{ github.event.inputs.CI_COMMIT_TAG || github.event.client_payload.CI_COMMIT_TAG }}
-          GITLAB_API: https://gitlab.com/api/v4/projects
-          GITLAB_API_TOKEN: ${{ secrets.DATA_MANAGER_TOKEN }}
-          GITLAB_PROJECT: 39606721
-          OPENAPI_FILE: openapi.yaml
-          OPENAPI_PATH: app%2Fopenapi
-        with:
-          API_NAME: data-manager-api
-          API_TARGET_NAME: data-manager-api
-      - name: Publish
-        uses: InformaticsMatters/squonk2-openapi-js-client-generator/publish-client@main
-        env:
-          CI_PIPELINE_ID: ${{ github.event.inputs.CI_PIPELINE_ID || github.event.client_payload.CI_PIPELINE_ID }}
-          CI_COMMIT_TAG: ${{ github.event.inputs.CI_COMMIT_TAG || github.event.client_payload.CI_COMMIT_TAG }}
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Docs
-      #   uses: InformaticsMatters/squonk2-openapi-js-client-generator/publish-docs@main
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Debug CI_COMMIT_TAG
+      run: |
+        echo "CI_COMMIT_TAG: ${{ github.event.inputs.CI_COMMIT_TAG }}"
+        echo "Client Payload CI_COMMIT_TAG: ${{ github.event.client_payload.CI_COMMIT_TAG }}"
+      shell: bash
+
+    - name: Build
+      # if: ${{ github.event.inputs.CI_COMMIT_TAG || github.event.client_payload.CI_COMMIT_TAG }}
+      uses: InformaticsMatters/squonk2-openapi-js-client-generator/build-client@main
+      env:
+        CI_COMMIT_TAG: ${{ github.event.inputs.CI_COMMIT_TAG || github.event.client_payload.CI_COMMIT_TAG }}
+        GITLAB_API: https://gitlab.com/api/v4/projects
+        GITLAB_API_TOKEN: ${{ secrets.DATA_MANAGER_TOKEN }}
+        GITLAB_PROJECT: 39606721
+        OPENAPI_FILE: openapi.yaml
+        OPENAPI_PATH: app%2Fopenapi
+      with:
+        API_NAME: data-manager-api
+        API_TARGET_NAME: data-manager-api
+    - name: Publish
+      uses: InformaticsMatters/squonk2-openapi-js-client-generator/publish-client@main
+      env:
+        CI_PIPELINE_ID: ${{ github.event.inputs.CI_PIPELINE_ID || github.event.client_payload.CI_PIPELINE_ID }}
+        CI_COMMIT_TAG: ${{ github.event.inputs.CI_COMMIT_TAG || github.event.client_payload.CI_COMMIT_TAG }}
+        NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Docs
+    #   uses: InformaticsMatters/squonk2-openapi-js-client-generator/publish-docs@main
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
