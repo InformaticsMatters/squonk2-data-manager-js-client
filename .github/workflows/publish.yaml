@@ -35,6 +35,8 @@ jobs:
         GITLAB_PROJECT: 39606721
         OPENAPI_FILE: openapi.yaml
         OPENAPI_PATH: app%2Fopenapi
+        NODE_JS_VERSION: ${{ vars.NODE_JS_VERSION }}
+        PNPM_VERSION: ${{ vars.PNPM_VERSION }}
       with:
         API_NAME: data-manager-api
         API_TARGET_NAME: data-manager-api
